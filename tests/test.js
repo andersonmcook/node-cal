@@ -50,10 +50,18 @@ describe('cal', () => {
       it('returns 2 (Tuesday) for March 1, 2016', () => {
         expect(zellers.getDay(2016, 3, 1)).to.equal(2);
       });
-      // 2000, 3, 1 === 3
-      // 2100, 3, 1 === 1
-      // 2200, 3, 2 === 0
-      // 2300, 3, 1 === 4
+      it('returns 3 (Wednesday) for March 1, 2000', () => {
+        expect(zellers.getDay(2000, 3, 1)).to.equal(3);
+      });
+      it('returns 1 (Monday) for March 1, 2100', () => {
+        expect(zellers.getDay(2100, 3, 1)).to.equal(1);
+      });
+      it('returns 0 (Sunday) for March 2, 2200', () => {
+        expect(zellers.getDay(2200, 3, 2)).to.equal(0);
+      });
+      it('returns 4 (Thursday) for March 1, 2300', () => {
+        expect(zellers.getDay(2300, 3, 1)).to.equal(4);
+      });
     });
   });
 });
