@@ -13,6 +13,14 @@ describe('cal', () => {
     });
   });
 
+  describe('month.js', () => {
+    const {generateMonth} = require('../lib/month.js');
+    it('should return month and year with the right spaces', () => {
+      expect(generateMonth(2016, 1)).to.equal("    January 2016");
+      expect(generateMonth(2016, 2)).to.equal("   February 2016");
+    });
+  });
+
   describe("Zeller's congruence", () => {
     const zellers = require('../lib/zellers.js');
 

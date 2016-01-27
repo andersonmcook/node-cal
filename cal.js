@@ -2,6 +2,7 @@
 
 "use strict";
 
-const generateMonth = require('./lib/month');
+//const {getMonth} = require('./lib/month.js');
 
-console.log(generateMonth(2016, 1));
+/*console.log(getMonth(2016, 1));*/
+console.log('hey');
