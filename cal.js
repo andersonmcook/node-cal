@@ -1,8 +1,17 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --harmony_destructuring
 
 "use strict";
 
-//const {getMonth} = require('./lib/month.js');
+const [ , , ...args] = process.argv;
 
-/*console.log(getMonth(2016, 1));*/
-console.log('hey');
+if (args.length === 2) {
+  const[month, year] = args;
+
+  console.log(`generateMonth(${year}, ${month})`);
+} else if (args.length === 1) {
+  const[year] = args;
+  console.log(`generateYear(${year})`);
+} else {
+  console.log('nope');
+  process.exit(64);
+}

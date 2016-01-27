@@ -23,7 +23,8 @@ describe('cal', () => {
     });
 
     it('should return the calendar (currently 31 days instead of accurate)', () => {
-      expect(wholeMonth(2016, 1)).to.equal(goal);
+      //expect(wholeMonth(2016, 1)).to.equal(goal);
+      expect(wholeMonth(2012, 2)).to.equal("Feb 2012, 29 days");
     });
   });
 
