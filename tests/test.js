@@ -14,10 +14,16 @@ describe('cal', () => {
   });
 
   describe('month.js', () => {
-    const {generateMonth} = require('../lib/month.js');
+    const {generateMonth, calendarBody, wholeMonth} = require('../lib/month.js');
+    const goal = execSync('cal').toString();
+
     it('should return month and year with the right spaces', () => {
       expect(generateMonth(2016, 1)).to.equal("    January 2016");
       expect(generateMonth(2016, 2)).to.equal("   February 2016");
+    });
+
+    it('should return the calendar (currently 31 days instead of accurate)', () => {
+      expect(wholeMonth(2016, 1)).to.equal(goal);
     });
   });
 
