@@ -27,32 +27,32 @@ describe('cal', () => {
       //expect(wholeMonth(2012, 2)).to.equal("Feb 2012, 29 days");
     });
 
-    it('should show Feb 2012 has having 29 days with right spaces', () => {
-      expect(wholeMonth(2012, 2)).to.equal("Feb 2012, 29 days");
+    it('should show Feb 2012 has having 29 days starts on We', () => {
+      expect(wholeMonth(2012, 2)).to.equal("Feb 2012, 29 days, We1");
     });
 
-    it('should show Feb 2014 has having 28 days with right spaces)', () => {
-      expect(wholeMonth(2014, 2)).to.equal("Feb 2014, 28 days");
+    it('should show Feb 2014 has having 28 days starts on Sa)', () => {
+      expect(wholeMonth(2014, 2)).to.equal("Feb 2014, 28 days, Sa1");
     });
 
-    it('should show Jan 2016 as having 6 weeks', () => {
-      expect(wholeMonth(2016, 1)).to.equal("Feb 2016 6 weeks");
+    it('should show Jan 2016 as having 6 weeks starts on Fr', () => {
+      expect(wholeMonth(2016, 1)).to.equal("Jan 2016 6 weeks, Fr1");
     });
 
-    it('should show Oct 2015 as having 5 weeks', () => {
-      expect(wholeMonth(2015, 10)).to.equal("Oct 10 5 weeks");
+    it('should show Oct 2015 as having 5 weeks starts on Th', () => {
+      expect(wholeMonth(2015, 10)).to.equal("Oct 10 5 weeks, Th1");
     });
 
-    it('should show Feb 2015 as having 4 weeks', () => {
-      expect(wholeMonth(2015, 2)).to.equal("Feb 2015 4 weeks");
+    it('should show Feb 2015 as having 4 weeks starts on Su', () => {
+      expect(wholeMonth(2015, 2)).to.equal("Feb 2015 4 weeks, Su1");
     });
 
-    it('should show Nov 2015 as having 30 days', () => {
-      expect(wholeMonth(2015, 11)).to.equal("Nov 2015 30 days");
+    it('should show Nov 2015 as having 30 days starts on Su', () => {
+      expect(wholeMonth(2015, 11)).to.equal("Nov 2015 30 days, Su1");
     });
 
-    it('should show Dec 2015 as having 31 days', () => {
-      expect(wholeMonth(2015, 12)).to.equal("Dec 2015 31 days");
+    it('should show Dec 2015 as having 31 days starts on Tu', () => {
+      expect(wholeMonth(2015, 12)).to.equal("Dec 2015 31 days, Tu1");
     });
 
 
