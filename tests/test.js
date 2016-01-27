@@ -6,8 +6,8 @@ const { execSync } = require('child_process');
 describe('cal', () => {
   describe('CLI', () => {
     it('should handle the current month', () => {
-      const goal = execSync('cal').toString();
-      const output = execSync('./cal.js').toString();
+      const goal = execSync('cal 1 2016').toString();
+      const output = execSync('./cal.js 1 2016').toString();
 
       expect(output).to.equal(goal);
     });
@@ -24,11 +24,10 @@ describe('cal', () => {
 
     it('should return the calendar', () => {
       expect(wholeMonth(2016, 1)).to.equal(goal);
-      //expect(wholeMonth(2012, 2)).to.equal("Feb 2012, 29 days");
     });
 
     it('should show Feb 2012 has having 29 days starts on We', () => {
-      expect(wholeMonth(2012, 2)).to.equal("Feb 2012, 29 days, We1");
+      expect(wholeMonth(2012, 2)).to.equal(execSync('cal 2 2012').toString());
     });
 
     it('should show Feb 2014 has having 28 days starts on Sa)', () => {
