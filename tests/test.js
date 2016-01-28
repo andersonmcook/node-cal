@@ -13,7 +13,7 @@ describe('cal', () => {
     });
   });
 
-  describe('month.js', () => {
+  describe('cal vs ./cal.js', () => {
     const {generateMonth, calendarBody, wholeMonth} = require('../lib/month.js');
     const goal = execSync('cal').toString();
 
@@ -22,36 +22,32 @@ describe('cal', () => {
       expect(generateMonth(2016, 2)).to.equal("   February 2016");
     });
 
-    it('should return the calendar', () => {
-      expect(wholeMonth(2016, 1)).to.equal(goal);
+    it('CLI should show Feb 2012 has having 29 days starts on We', () => {
+      expect(execSync('./cal.js 2 2012').toString()).to.equal(execSync('cal 2 2012').toString());
     });
 
-    it('should show Feb 2012 has having 29 days starts on We', () => {
-      expect(wholeMonth(2012, 2)).to.equal(execSync('cal 2 2012').toString());
+    it('CLI should show Feb 2014 has having 28 days starts on Sa', () => {
+      expect(execSync('./cal.js 2 2014').toString()).to.equal(execSync('cal 2 2014').toString());
     });
 
-    it('should show Feb 2014 has having 28 days starts on Sa', () => {
-      expect(wholeMonth(2014, 2)).to.equal(execSync('cal 2 2014').toString());
+    it('CLI should show Jan 2016 as having 6 weeks starts on Fr', () => {
+      expect(execSync('./cal.js 1 2016').toString()).to.equal(execSync('cal 1 2016').toString());
     });
 
-    it('should show Jan 2016 as having 6 weeks starts on Fr', () => {
-      expect(wholeMonth(2016, 1)).to.equal(execSync('cal 1 2016').toString());
+    it('CLI should show Oct 2015 as having 5 weeks starts on Th', () => {
+      expect(execSync('./cal.js 10 2015').toString()).to.equal(execSync('cal 10 2015').toString());
     });
 
-    it('should show Oct 2015 as having 5 weeks starts on Th', () => {
-      expect(wholeMonth(2015, 10)).to.equal(execSync('cal 10 2015').toString());
+    it('CLI should show Feb 2015 as having 4 weeks starts on Su', () => {
+      expect(execSync('./cal.js 2 2015').toString()).to.equal(execSync('cal 2 2015').toString());
     });
 
-    it('should show Feb 2015 as having 4 weeks starts on Su', () => {
-      expect(wholeMonth(2015, 2)).to.equal(execSync('cal 2 2015').toString());
+    it('CLI should show Nov 2015 as having 30 days starts on Su', () => {
+      expect(execSync('./cal.js 11 2015').toString()).to.equal(execSync('cal 11 2015').toString());
     });
 
-    it('should show Nov 2015 as having 30 days starts on Su', () => {
-      expect(wholeMonth(2015, 11)).to.equal(execSync('cal 11 2015').toString());
-    });
-
-    it('should show Dec 2015 as having 31 days starts on Tu', () => {
-      expect(wholeMonth(2015, 12)).to.equal(execSync('cal 12 2015').toString());
+    it('CLI should show Dec 2015 as having 31 days starts on Tu', () => {
+      expect(execSync('./cal.js 12 2015').toString()).to.equal(execSync('cal 12 2015').toString());
     });
 
 

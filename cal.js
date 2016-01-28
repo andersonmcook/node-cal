@@ -8,6 +8,7 @@ if (args.length === 2) {
   const[month, year] = args;
   //console.log(month, year);
   console.log(`${wholeMonth(parseInt(year), parseInt(month))}`);
+  //return `${wholeMonth(parseInt(year), parseInt(month))}}`;
 } else if (args.length === 1) {
   const[year] = args;
   console.log("oh no");
