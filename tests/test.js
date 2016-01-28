@@ -50,6 +50,9 @@ describe('cal', () => {
       expect(execSync('./cal.js 12 2015').toString()).to.equal(execSync('cal 12 2015').toString());
     });
 
+    /*it('CLI should show cal: year 0 not in range 1753..9999 with input of a a', () => {
+      expect(execSync('./cal.js a a').toString()).to.equal(execSync('cal a a').toString());
+    });*/
 
 
 
