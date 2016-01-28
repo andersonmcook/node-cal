@@ -30,28 +30,28 @@ describe('cal', () => {
       expect(wholeMonth(2012, 2)).to.equal(execSync('cal 2 2012').toString());
     });
 
-    it('should show Feb 2014 has having 28 days starts on Sa)', () => {
-      expect(wholeMonth(2014, 2)).to.equal("Feb 2014, 28 days, Sa1");
+    it('should show Feb 2014 has having 28 days starts on Sa', () => {
+      expect(wholeMonth(2014, 2)).to.equal(execSync('cal 2 2014').toString());
     });
 
     it('should show Jan 2016 as having 6 weeks starts on Fr', () => {
-      expect(wholeMonth(2016, 1)).to.equal("Jan 2016 6 weeks, Fr1");
+      expect(wholeMonth(2016, 1)).to.equal(execSync('cal 1 2016').toString());
     });
 
     it('should show Oct 2015 as having 5 weeks starts on Th', () => {
-      expect(wholeMonth(2015, 10)).to.equal("Oct 10 5 weeks, Th1");
+      expect(wholeMonth(2015, 10)).to.equal(execSync('cal 10 2015').toString());
     });
 
     it('should show Feb 2015 as having 4 weeks starts on Su', () => {
-      expect(wholeMonth(2015, 2)).to.equal("Feb 2015 4 weeks, Su1");
+      expect(wholeMonth(2015, 2)).to.equal(execSync('cal 2 2015').toString());
     });
 
     it('should show Nov 2015 as having 30 days starts on Su', () => {
-      expect(wholeMonth(2015, 11)).to.equal("Nov 2015 30 days, Su1");
+      expect(wholeMonth(2015, 11)).to.equal(execSync('cal 11 2015').toString());
     });
 
     it('should show Dec 2015 as having 31 days starts on Tu', () => {
-      expect(wholeMonth(2015, 12)).to.equal("Dec 2015 31 days, Tu1");
+      expect(wholeMonth(2015, 12)).to.equal(execSync('cal 12 2015').toString());
     });
 
 
