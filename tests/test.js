@@ -19,7 +19,11 @@ describe('cal', () => {
 
     //
     const goalArray = execSync('cal 2016').toString().split("\n");
-    const outputArray = execSync('./lib/year.js').toString().split("\n");
+    const outputArray = execSync('./cal.js 2016').toString().split("\n");
+
+    it('should match cal and cal.js', () => {
+      expect(execSync('cal 2016').toString()).to.equal(execSync('./cal.js 2016').toString());
+    });
 
     it('should match lines in full calendar', () => {
       expect(outputArray[0]).to.equal(goalArray[0]);
