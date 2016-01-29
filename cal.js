@@ -13,6 +13,10 @@ if (args.length === 2) {
 } else if (args.length === 1) {
   const[year] = args;
   console.log("just the year was inputted");
+} else if (args.length === 0) {
+  const date = new Date;
+  const [year, month] = [date.getFullYear(), date.getMonth() +1];
+  console.log(`${wholeMonth(parseInt(year), parseInt(month))}`);
 } else {
   console.log('nope');
   process.exit(64);
