@@ -17,11 +17,30 @@ describe('cal', () => {
     const {generateMonth, calendarBody, wholeMonth} = require('../lib/month.js');
     const goal = execSync('cal').toString();
 
+    //
+    const goalArray = execSync('cal 2016').toString().split("\n");
+    const outputArray = execSync('./lib/year.js').toString().split("\n");
+    
+    it('should match lines in full calendar', () => {
+      expect(goalArray[0]).to.equal(goalArray[0]);
+      expect(goalArray[1]).to.equal(goalArray[1]);
+      expect(goalArray[2]).to.equal(goalArray[2]);
+      expect(goalArray[3]).to.equal(goalArray[3]);
+      expect(goalArray[4]).to.equal(goalArray[4]);
+      expect(goalArray[5]).to.equal(goalArray[5]);
+      expect(goalArray[6]).to.equal(goalArray[6]);
+      expect(goalArray[7]).to.equal(goalArray[7]);
+      expect(goalArray[8]).to.equal(goalArray[8]);
+      expect(goalArray[9]).to.equal(goalArray[9]);
+      expect(goalArray[10]).to.equal(goalArray[10]);
+      expect(goalArray[11]).to.equal(goalArray[11]);
+    });
+
     it('should return month and year with the right spaces', () => {
       expect(generateMonth(2016, 1)).to.equal("    January 2016");
       expect(generateMonth(2016, 2)).to.equal("   February 2016");
     });
-
+/*
     it('CLI should show Feb 2012 has having 29 days starts on We', () => {
       expect(execSync('./cal.js 2 2012').toString()).to.equal(execSync('cal 2 2012').toString());
     });
@@ -50,10 +69,13 @@ describe('cal', () => {
       expect(execSync('./cal.js 12 2015').toString()).to.equal(execSync('cal 12 2015').toString());
     });
 
-    /*it('CLI should show cal: year 0 not in range 1753..9999 with input of a a', () => {
-      expect(execSync('./cal.js a a').toString()).to.equal(execSync('cal a a').toString());
+    //it('CLI should show cal: year 0 not in range 1753..9999 with input of a a', () => {
+    //  expect(execSync('./cal.js a a').toString()).to.equal(execSync('cal a a').toString());
+    //});
+   
+    it('CLI full calendar 2016', () => {
+      expect(execSync('./lib/year.js').toString()).to.equal(execSync('cal 2016').toString());
     });*/
-
 
 
 
