@@ -22,7 +22,7 @@ describe('cal', () => {
     const outputArray = execSync('./cal.js 2016').toString().split("\n");
 
     it('should match cal and cal.js', () => {
-      expect(execSync('cal 2016').toString()).to.equal(execSync('./cal.js 2016').toString());
+      expect(execSync('./cal.js 2016').toString()).to.equal(execSync('cal 2016').toString());
     });
 
     it('should match lines in full calendar', () => {
