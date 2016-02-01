@@ -4,6 +4,11 @@ node_js:
   - 5
   - 4.2
 script: npm run coveralls
+# whitelist
+branches:
+  only:
+    - master
+    - stable
 notifications:
   email: false
 
