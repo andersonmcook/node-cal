@@ -4,6 +4,7 @@ node_js:
   - 5
   - 4.2
 script: npm run coveralls
-os: -osx
+os:
+  - osx
 notifications:
   email: false
