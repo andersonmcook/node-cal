@@ -21,7 +21,7 @@ describe('cal', () => {
     const goalArray = execSync('cal 2016').toString().split("\n");
     const outputArray = execSync('./cal.js 2016').toString().split("\n");
 
-    it('should match cal and cal.js', () => {
+    /*it('should match cal and cal.js', () => {
       expect(execSync('./cal.js 2016').toString()).to.equal(execSync('cal 2016').toString());
     });
 
@@ -40,14 +40,14 @@ describe('cal', () => {
       expect(outputArray[11]).to.equal(goalArray[11]);
       expect(outputArray[12]).to.equal(goalArray[12]);
       expect(outputArray[13]).to.equal(goalArray[13]);
-    });
+    });*/
 
-    it('should return month and year with the right spaces', () => {
+    /*it('should return month and year with the right spaces', () => {
       expect(generateMonth(2016, 1)).to.equal("    January 2016");
       expect(generateMonth(2016, 2)).to.equal("   February 2016");
-    });
+    });*/
 
-   /* it('CLI should show Feb 2012 has having 29 days starts on We', () => {
+    it('CLI should show Feb 2012 has having 29 days starts on We', () => {
       expect(execSync('./cal.js 2 2012').toString()).to.equal(execSync('cal 2 2012').toString());
     });
 
@@ -78,10 +78,11 @@ describe('cal', () => {
     it('CLI should show cal: year 0 not in range 1753..9999 with input of a a', () => {
       expect(execSync('./cal.js a a').toString()).to.equal(execSync('cal a a').toString());
     });
-
+    /*
     it('CLI full calendar 2016', () => {
       expect(execSync('./lib/year.js').toString()).to.equal(execSync('cal 2016').toString());
-    });*/
+    });
+   */
 
 
 
